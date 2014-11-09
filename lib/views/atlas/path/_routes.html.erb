@@ -1,0 +1,16 @@
+<% routes.each do |route| %>
+  <tr>
+    <td>
+      <%= route[:name]+'_path' if route[:name].present? %>
+    </td>
+    <td>
+      <%= route[:verb] %>
+    </td>
+    <td>
+      <%= route[:path] %>
+    </td>
+    <td>
+      <%= route[:reqs] %>
+    </td>
+  </tr>
+<% end %>

@@ -1,0 +1,26 @@
+<html>
+	<head>
+		<%= render :partial => 'atlas_css' %>
+	</head>
+
+	<body>
+		<% content_tag :div, :class => 'centered' do %>
+			<%= content_tag :h2, 'Routes' %>
+			<%= content_tag :small, '(Routes match in priority from top to bottom)' %>
+		<% end %>
+
+		<table id='route_table' class='route_table'>
+		  <thead>
+		    <tr>
+		      <th>Named Path</th>
+		      <th>HTTP Verb</th>
+		      <th>Path</th>
+		      <th>Controller#Action</th>
+		    </tr>
+		  </thead>
+		  <tbody>
+		    <%= render :partial => 'routes', :locals => { :routes => @routes } %>
+		  </tbody>
+		</table>
+	</body>
+<html>
